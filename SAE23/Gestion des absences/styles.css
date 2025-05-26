@@ -1,0 +1,158 @@
+/*
+    Fichier : styles.css
+    Description : Styles CSS personnalisés pour l'application de gestion des absences.
+*/
+
+/* Styles du corps de la page. */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8; /* Gris très clair */
+    color: #333; /* Gris foncé */
+}
+
+/* Conteneur principal. */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto; /* Centre le conteneur */
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles des tables. */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles des cellules d'en-tête et de données. */
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Styles des cellules d'en-tête. */
+th {
+    background-color: #4a90e2; /* Bleu */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* Supprime la bordure inférieure de la dernière ligne. */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Styles des cases de sélection d'absence. */
+.absence-cell {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 3.5rem;
+    width: 8.5rem;
+    margin: auto 0px; /* Centre la cellule */
+}
+
+/* Styles pour absence injustifiée (ABI). */
+.absence-cell.absent-abi {
+    background-color: #f87171; /* Rouge clair */
+    color: white;
+}
+
+/* Styles pour absence justifiée (ABJ). */
+.absence-cell.absent-abj {
+    background-color: #fbbf24; /* Orange */
+    color: white;
+}
+
+/* Styles pour absence annulée. */
+.absence-cell.cancelled {
+    background-color: #cbd5e0; /* Gris clair */
+    color: #64748b;
+    text-decoration: line-through;
+}
+
+/* Effet de survol pour les cases d'absence. */
+.absence-cell:hover {
+    background-color: #e2e8f0; /* Gris très clair */
+}
+
+/* Effet de survol pour les cases ABI/ABJ. */
+.absence-cell.absent-abi:hover, .absence-cell.absent-abj:hover {
+    opacity: 0.9;
+}
+
+/* Styles généraux des boutons. */
+.button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+/* Styles du bouton primaire. */
+.button-primary {
+    background-color: #4a90e2; /* Bleu */
+    color: white;
+}
+
+/* Effet de survol du bouton primaire. */
+.button-primary:hover {
+    background-color: #357bd8; /* Bleu plus foncé */
+}
+
+/* Styles réactifs pour les petits écrans. */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #e2e8f0;
+        margin-bottom: 0.75rem;
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 1rem;
+        font-weight: 600;
+        text-align: left;
+        color: #4a90e2;
+    }
+    .absence-cell {
+        margin: 0.5rem 0;
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+    }
+}

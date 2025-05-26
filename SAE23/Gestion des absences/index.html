@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestion des Absences</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Absences</h1>
+
+        <form id="session-form">
+			<label for="module">Module :</label>
+			<select id="module" name="module" required>
+				<option value="" disabled selected>Choisissez un module</option>
+				<option value="R201">R201</option>
+				<option value="R202">R202</option>
+				<option value="R203">R203</option>
+				<option value="R204">R204</option>
+				<option value="R205">R205</option>
+				<option value="R206">R206</option>
+				<option value="R207">R207</option>
+				<option value="R208">R208</option>
+				<option value="R209">R209</option>
+				<option value="R210">R210</option>
+				<option value="R211">R211</option>
+				<option value="R212">R212</option>
+				<option value="R213">R213</option>
+				<option value="R214">R214</option>
+			</select>
+
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="time">Créneau horaire :</label>
+            <select id="time" name="time" required>
+                <option value="" disabled selected>Choisissez un créneau</option>
+                <option value="08:30-10:00">08:30 - 10:00</option>
+                <option value="10:00-11:30">10:00 - 11:30</option>
+                <option value="13:00-14:30">13:00 - 14:30</option>
+                <option value="14:30-16:00">14:30 - 16:00</option>
+                <option value="16:00-17:30">16:00 - 17:30</option>
+                <option value="17:30-19:00">17:30 - 19:00</option>
+            </select>
+
+            <button type="submit" class="button button-primary">Démarrer la session</button>
+        </form>
+
+        <div id="absence-table-container" style="display:none;">
+            <table id="absence-table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Présence</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="save-button" class="button button-primary">Enregistrer les absences</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

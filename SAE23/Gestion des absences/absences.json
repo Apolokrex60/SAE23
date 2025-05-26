@@ -1,0 +1,37 @@
+[
+    {
+        "session": {
+            "module": "R209",
+            "date": "2025-05-12",
+            "heure": "10:00"
+        },
+        "absences": [],
+        "timestamp": "2025-05-26 17:21:07"
+    },
+    {
+        "session": {
+            "module": "R209",
+            "date": "2025-05-12",
+            "heure": "08:30-10:00"
+        },
+        "absences": [
+            {
+                "id": "1",
+                "status": "present"
+            },
+            {
+                "id": "2",
+                "status": "present"
+            },
+            {
+                "id": "3",
+                "status": "present"
+            },
+            {
+                "id": "4",
+                "status": "abj"
+            }
+        ],
+        "timestamp": "2025-05-26 17:30:32"
+    }
+]
